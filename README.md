@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sgmcalculater | Online BMI Calculator</title>
+
+<meta name="description" content="Free online BMI calculator by sgmcalculater. Calculate Body Mass Index using kg, lb, cm, or feet & inches. Accurate and instant results.">
+<meta name="keywords" content="BMI calculator, online BMI calculator, body mass index, sgmcalculater, BMI kg cm, BMI feet inches">
+<meta name="author" content="sgmcalculater">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#e3f2fd,#ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1565c0;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+}
+
+select, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  flex: 1;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #1565c0;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  display: none;
+}
+
+.result h2 {
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>sgmcalculater</h1>
+  <p class="subtitle">Online BMI Calculator</p>
+
+  <label>Unit System</label>
+  <select id="unit" onchange="toggleUnits()">
+    <option value="metric">Metric (kg, cm)</option>
+    <option value="imperial">Imperial (lb, ft/in)</option>
+  </select>
+
+  <div id="metric">
+    <label>Weight (kg)</label>
+    <input type="number" id="weightKg" placeholder="e.g. 70">
+
+    <label>Height (cm)</label>
+    <input type="number" id="heightCm" placeholder="e.g. 170">
+  </div>
+
+  <div id="imperial" style="display:none;">
+    <label>Weight (lb)</label>
+    <input type="number" id="weightLb" placeholder="e.g. 154">
+
+    <label>Height</label>
+    <div class="row">
+      <input type="number" id="heightFt" placeholder="Feet">
+      <input type="number" id="heightIn" placeholder="Inches">
+    </div>
+  </div>
+
+  <label>Age (optional)</label>
+  <input type="number" id="age" placeholder="e.g. 25">
+
+  <label>Gender (optional)</label>
+  <select id="gender">
+    <option value="">Select</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <button onclick="calculateBMI()">Calculate BMI</button>
+
+  <div class="result" id="resultBox">
+    <h2 id="bmiValue"></h2>
+    <p id="bmiCategory"></p>
+  </div>
+
+  <div class="footer">
+    © 2026 sgmcalculater | Free Health Tool
+  </div>
+</div>
+
+<script>
+function toggleUnits() {
+  const unit = document.getElementById("unit").value;
+  document.getElementById("metric").style.display = unit === "metric" ? "block" : "none";
+  document.getElementById("imperial").style.display = unit === "imperial" ? "block" : "none";
+}
+
+function calculateBMI() {
+  const unit = document.getElementById("unit").value;
+  let bmi = 0;
+
+  if (unit === "metric") {
+    const weight = parseFloat(document.getElementById("weightKg").value);
+    const height = parseFloat(document.getElementById("heightCm").value) / 100;
+    if (!weight || !height) return alert("Please enter valid values");
+    bmi = weight / (height * height);
+  } else {
+    const weight = parseFloat(document.getElementById("weightLb").value);
+    const ft = parseFloat(document.getElementById("heightFt").value);
+    const inch = parseFloat(document.getElementById("heightIn").value);
+    if (!weight || !ft) return alert("Please enter valid values");
+    const heightInches = (ft * 12) + (inch || 0);
+    bmi = (weight / (heightInches * heightInches)) * 703;
+  }
+
+  bmi = bmi.toFixed(1);
+  let category = "";
+
+  if (bmi < 18.5) category = "Underweight";
+  else if (bmi < 24.9) category = "Normal weight";
+  else if (bmi < 29.9) category = "Overweight";
+  else category = "Obese";
+
+  document.getElementById("bmiValue").innerText = "BMI: " + bmi;
+  document.getElementById("bmiCategory").innerText = category;
+  document.getElementById("resultBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
