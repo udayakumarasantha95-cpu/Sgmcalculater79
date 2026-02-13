@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us</title>
+<meta name="description" content="About our website and our mission.">
+</head>
+<body>
+
+<h1>About Us</h1>
+
+<p>Welcome to our website. We provide free and easy-to-use online calculators to help users get quick and accurate results.</p>
+
+<p>Our goal is to offer simple tools that anyone can use without registration.</p>
+
+<p>Thank you for visiting our website.</p>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
