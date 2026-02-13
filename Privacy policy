@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Privacy Policy</title>
+<meta name="description" content="Privacy policy page">
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+
+<p>This website uses third-party services such as Google AdSense that may use cookies.</p>
+
+<p>Cookies are used to personalize ads and analyze traffic.</p>
+
+<p>We do not collect personal information directly from users.</p>
+
+<p>By using this website, you agree to this privacy policy.</p>
+
+<p>Google uses the DoubleClick cookie to serve ads based on users' visits to this website.</p>
+
+<p>Users may opt out of personalized advertising by visiting Google Ads Settings.</p>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
