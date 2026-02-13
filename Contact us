@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us</title>
+<meta name="description" content="Contact us page">
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+<p>If you have any questions, suggestions, or feedback, feel free to contact us.</p>
+
+<p>Email: yourname@email.com</p>
+
+<p>We will respond as soon as possible.</p>
+
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
