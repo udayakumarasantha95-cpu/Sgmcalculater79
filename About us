@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About Us</title>
-<meta name="description" content="About our website and our mission.">
+<title>About Us | Online Calculator</title>
+<meta name="description" content="About our online calculator website and our mission.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <h1>About Us</h1>
 
-<p>Welcome to our website. We provide free and easy-to-use online calculators to help users get quick and accurate results.</p>
+<p>Welcome to our online calculator website.</p>
 
-<p>Our goal is to offer simple tools that anyone can use without registration.</p>
+<p>Our website is designed to provide free, fast, and easy-to-use online calculators for everyone. Currently, we offer a BMI (Body Mass Index) calculator that helps users understand their body weight status based on height and weight.</p>
+
+<p>Our goal is to create simple tools that are accessible on all devices without any registration or cost.</p>
+
+<p>We continuously work to improve our calculators and add more useful tools in the future.</p>
 
 <p>Thank you for visiting our website.</p>
 
-<a href="index.html">Back to Home</a>
+<hr>
+<a href="index.html">⬅ Back to Home</a>
 
 </body>
 </html>
